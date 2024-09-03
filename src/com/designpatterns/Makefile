@@ -3,11 +3,11 @@ SRC_DIR = main/java/com/designpatterns
 BIN_DIR = bin
 
 # Behavioral sub-packages
-BEHAVIORAL_OBSERVER_SRC = $(wildcard Behavioral/observer/**/*.java) 
+BEHAVIORAL_OBSERVER_SRC = $(wildcard Behavioral/ObserverPattern/**/*.java) Behavioral/ObserverPattern/main.java
 BEHAVIORAL_STRATEGY_SRC = $(wildcard Behavioral/strategy/**/*.java) Behavioral/strategy/main.java
 
 # Default target
-all: behavioral observer strategy
+all: behavioral
 
 # Target for compiling all Behavioral sub-packages
 behavioral: behavioral_observer behavioral_strategy
