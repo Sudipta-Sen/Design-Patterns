@@ -45,3 +45,31 @@ However, the Observer only knows that something has changed but doesn't know wha
 1) The relationship between Observable and Observer is a "has-a" relationship.
 2) Multiple Observers can be associated with a single Observable.
 
+## Cloning the Repository
+Observer Design pattern is under Design-Patterns repository. You can clone this repository using either SSH or HTTPS.
+
+### SSH
+`git clone git@github.com:Sudipta-Sen/Design-Patterns.git`
+
+### HTTP
+`git clone https://github.com/Sudipta-Sen/Design-Patterns.git`
+
+## Compile the code
+
+### Navigate to the designpatterns folder
+`cd Design-Patterns/src/com/designpatterns`
+
+### Compile the Code
+To compile the Behavioral/ObserverPattern package, use the following command
+
+`make behavioral_observer`
+
+### Run the Code
+Execute the compiled code with:
+
+`java -cp bin com.designpatterns.Behavioral.ObserverPattern.main`
+
+### Clean Up: 
+To clean up the compiled classes and bin directory, use:
+
+`make clean`
