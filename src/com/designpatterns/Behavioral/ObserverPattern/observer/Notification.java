@@ -1,6 +1,6 @@
 package com.designpatterns.Behavioral.ObserverPattern.observer;
 
-import com.designpatterns.Behavioral.ObserverPattern.observable.Product;
+import com.designpatterns.Behavioral.ObserverPattern.observable.ProductObservableInterface;
 
 public class Notification implements Observer {
     User user;
@@ -9,7 +9,7 @@ public class Notification implements Observer {
     }
 
     @Override
-    public void update(Product product) {
+    public void update(ProductObservableInterface product) {
         System.out.println("Hi, "+user.getName()+" new notification comes in. "+product.getProductName()+" is now availble");
     }
 }

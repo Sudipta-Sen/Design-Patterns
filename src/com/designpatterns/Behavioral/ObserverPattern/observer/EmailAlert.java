@@ -1,6 +1,6 @@
 package com.designpatterns.Behavioral.ObserverPattern.observer;
 
-import com.designpatterns.Behavioral.ObserverPattern.observable.Product;
+import com.designpatterns.Behavioral.ObserverPattern.observable.ProductObservableInterface;
 
 public class EmailAlert implements Observer {
     User user;
@@ -9,7 +9,7 @@ public class EmailAlert implements Observer {
     }
 
     @Override
-    public void update(Product product) {
+    public void update(ProductObservableInterface product) {
         System.out.println("Send email to "+user.getEmail()+" to notify that "+product.getProductName()+" is now availble");
     }
 }

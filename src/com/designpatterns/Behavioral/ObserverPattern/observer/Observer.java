@@ -1,7 +1,7 @@
 package com.designpatterns.Behavioral.ObserverPattern.observer;
 
-import com.designpatterns.Behavioral.ObserverPattern.observable.Product;
+import com.designpatterns.Behavioral.ObserverPattern.observable.ProductObservableInterface;
 
 public interface Observer {
-    void update(Product product);
+    void update(ProductObservableInterface product);
 }

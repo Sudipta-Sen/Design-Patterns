@@ -1,7 +1,5 @@
 package com.designpatterns.Behavioral.ObserverPattern.observable;
 
-import com.designpatterns.Behavioral.ObserverPattern.observer.Observer;
-
 public class WashingMachine extends Product {
     int noOfStocks;
 

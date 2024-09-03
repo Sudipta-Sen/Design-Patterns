@@ -17,7 +17,6 @@ behavioral_observer: $(BEHAVIORAL_OBSERVER_SRC)
 	@mkdir -p $(BIN_DIR)
 	echo $(BEHAVIORAL_OBSERVER_SRC)
 	javac -d $(BIN_DIR) $(BEHAVIORAL_OBSERVER_SRC)
-	@touch $(BIN_DIR).compiled
 
 # Target for compiling strategy sub-package
 behavioral_strategy: $(BEHAVIORAL_STRATEGY_SRC)
