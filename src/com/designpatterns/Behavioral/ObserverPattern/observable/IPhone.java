@@ -1,7 +1,5 @@
 package com.designpatterns.Behavioral.ObserverPattern.observable;
 
-import com.designpatterns.Behavioral.ObserverPattern.observer.Observer;
-
 public class IPhone extends Product {
     int noOfStocks;
 
@@ -19,13 +17,6 @@ public class IPhone extends Product {
 
     public int getData() {
         return noOfStocks;
-    }
-
-    @Override
-    public void notifyObservable() {
-        for(Observer observer: observerList) {
-            observer.update(this);
-        }
     }
 
 }

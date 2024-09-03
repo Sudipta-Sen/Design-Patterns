@@ -25,4 +25,11 @@ public abstract class Product implements ProductObservableInterface {
     public String getProductName() {
         return name;
     }
+
+    @Override
+    public void notifyObservable() {
+        for(Observer observer: observerList) {
+           observer.update(this);
+        }
+    }
 }

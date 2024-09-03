@@ -21,11 +21,4 @@ public class WashingMachine extends Product {
         return noOfStocks;
     }
 
-    @Override
-    public void notifyObservable() {
-        for(Observer observer: observerList) {
-           observer.update(this);
-        }
-    }
-
 }
