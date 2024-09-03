@@ -23,7 +23,7 @@ Strategy Design pattern is under Design-Patterns repository. You can clone this 
 
 ## Compile the code
 
-### Navigate to the ParkingLotDesign folder
+### Navigate to the designpatterns folder
 `cd Design-Patterns/src/com/designpatterns`
 
 ### Compile the Code
