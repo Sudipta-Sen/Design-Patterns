@@ -5,9 +5,10 @@ BIN_DIR = bin
 # Behavioral sub-packages
 BEHAVIORAL_OBSERVER_SRC = $(wildcard Behavioral/ObserverPattern/**/*.java) Behavioral/ObserverPattern/main.java
 BEHAVIORAL_STRATEGY_SRC = $(wildcard Behavioral/strategy/**/*.java) Behavioral/strategy/main.java
+STRUCTUAL_DECORATOR_SRC = $(wildcard Structural/DecoratorPattern/**/*.java) Structural/DecoratorPattern/main.java
 
 # Default target
-all: behavioral
+all: behavioral structual
 
 # Target for compiling all Behavioral sub-packages
 behavioral: behavioral_observer behavioral_strategy
@@ -23,6 +24,13 @@ behavioral_strategy: $(BEHAVIORAL_STRATEGY_SRC)
 	@mkdir -p $(BIN_DIR)
 	echo $(BEHAVIORAL_STRATEGY_SRC)
 	javac -d $(BIN_DIR) $(BEHAVIORAL_STRATEGY_SRC)
+
+structual: structual_decorator
+
+structual_decorator: $(STRUCTUAL_DECORATOR_SRC)
+	@mkdir -p $(BIN_DIR)
+	echo $(STRUCTUAL_DECORATOR_SRC)
+	javac -d $(BIN_DIR) $(STRUCTUAL_DECORATOR_SRC)
 
 # Clean up compiled classes
 clean:
