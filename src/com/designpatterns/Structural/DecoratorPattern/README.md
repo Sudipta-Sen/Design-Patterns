@@ -1,6 +1,3 @@
-class explosion
-decorator pattern has both has-a and is-a relationship
-
 # Decorator Design Pattern
 
 The Decorator Pattern is a structural design pattern that allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class. It involves a set of decorator classes that are used to wrap concrete components.
@@ -56,3 +53,32 @@ The decorator *has-a* base class because it holds a reference to the object it's
 
 #### Example:
 The *CheeseDecorator* would have a reference to a *Pizza* object, indicating it *has-a Pizza*. It delegates core *Pizza* functionality to the object it contains and then adds extra features, such as additional toppings or behaviors.
+
+## Cloning the Repository
+Decorator Design pattern is under Design-Patterns repository. You can clone this repository using either SSH or HTTPS.
+
+### SSH
+`git clone git@github.com:Sudipta-Sen/Design-Patterns.git`
+
+### HTTP
+`git clone https://github.com/Sudipta-Sen/Design-Patterns.git`
+
+## Compile the code
+
+### Navigate to the designpatterns folder
+`cd Design-Patterns/src/com/designpatterns`
+
+### Compile the Code
+To compile the Behavioral/strategy package, use the following command
+
+`make structural_decorator`
+
+### Run the Code
+Execute the compiled code with:
+
+`java -cp bin com.designpatterns.Structural.DecoratorPattern.main`
+
+### Clean Up: 
+To clean up the compiled classes and bin directory, use:
+
+`make clean`

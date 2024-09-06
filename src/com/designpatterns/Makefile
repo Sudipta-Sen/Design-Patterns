@@ -8,7 +8,7 @@ BEHAVIORAL_STRATEGY_SRC = $(wildcard Behavioral/strategy/**/*.java) Behavioral/s
 STRUCTUAL_DECORATOR_SRC = $(wildcard Structural/DecoratorPattern/**/*.java) Structural/DecoratorPattern/main.java
 
 # Default target
-all: behavioral structual
+all: behavioral structural
 
 # Target for compiling all Behavioral sub-packages
 behavioral: behavioral_observer behavioral_strategy
@@ -25,9 +25,9 @@ behavioral_strategy: $(BEHAVIORAL_STRATEGY_SRC)
 	echo $(BEHAVIORAL_STRATEGY_SRC)
 	javac -d $(BIN_DIR) $(BEHAVIORAL_STRATEGY_SRC)
 
-structual: structual_decorator
+structural: structural_decorator
 
-structual_decorator: $(STRUCTUAL_DECORATOR_SRC)
+structural_decorator: $(STRUCTUAL_DECORATOR_SRC)
 	@mkdir -p $(BIN_DIR)
 	echo $(STRUCTUAL_DECORATOR_SRC)
 	javac -d $(BIN_DIR) $(STRUCTUAL_DECORATOR_SRC)
