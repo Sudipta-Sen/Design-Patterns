@@ -8,6 +8,6 @@ public class BMW implements Car {
 
     @Override
     public CarType getType() {
-        return CarType.BMW;
+        return CarType.valueOf(this.getClass().getSimpleName());
     }
 }

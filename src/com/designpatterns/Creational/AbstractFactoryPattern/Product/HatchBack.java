@@ -8,6 +8,6 @@ public class HatchBack implements Car {
 
     @Override
     public CarType getType() {
-        return CarType.HatchBack;
+        return CarType.valueOf(this.getClass().getSimpleName());
     }
 }

@@ -8,6 +8,7 @@ public class Sedan implements Car {
 
     @Override
     public CarType getType() {
-        return CarType.Sedan;
+        // One way can be 'return CarType.Sedan' also but it will take the car type autometically
+        return CarType.valueOf(this.getClass().getSimpleName());
     }
 }
