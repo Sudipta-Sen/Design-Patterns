@@ -38,7 +38,7 @@ This project demonstrates a Car Factory System that uses both the Factory and Ab
 - **Concrete Specifications (SouthIndianCarSpecification, NorthIndianCarSpecification):** Region-specific car specifications.
 
 ## Cloning the Repository
-Abstract factpry pattern is under Design-Patterns repository. You can clone this repository using either SSH or HTTPS.
+Abstract factory pattern is under Design-Patterns repository. You can clone this repository using either SSH or HTTPS.
 
 ### SSH
 `git clone git@github.com:Sudipta-Sen/Design-Patterns.git`
