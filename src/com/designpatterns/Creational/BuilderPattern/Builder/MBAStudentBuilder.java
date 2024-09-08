@@ -37,6 +37,11 @@ public class MBAStudentBuilder extends StudentBuilder {
 
     @Override
     public Student build() {
+        //Add subjects for MBA
+        subjects.add("Marketing Managment");
+        subjects.add("Organizational Behaviour");
+        subjects.add("Financial Accounting");
+        
         return new Student(this);
     }
 

@@ -37,6 +37,11 @@ public class EngineeringStudentBuilder extends StudentBuilder {
 
     @Override
     public Student build() {
+        //Add engnieering subjects
+        subjects.add("Mathematics");
+        subjects.add("DSA");
+        subjects.add("Computer Architecture");
+        
         return new Student(this);
     }
 
