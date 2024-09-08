@@ -1,5 +1,14 @@
 # Builder Design Pattern 
 
+## Overview
+The **Builder Design Pattern** is a creational design pattern used to construct complex objects step-by-step. It separates the construction of an object from its representation, allowing you to create different types of objects using the same construction process.
+
+## Key Components
+1. **Builder:** Defines the steps required to build the object.
+2. **Concrete Builder:** Implements the steps defined in the Builder. Each concrete builder can produce different representations of the object.
+3. **Product:** The complex object that is being built.
+4. **Director:** (Optional) Orchestrates the construction process using the Builder. It ensures that the necessary steps are followed in the correct order.
+
 ## Real world Example with Student Construction
 This project demonstrates the **Builder Design Pattern** for constructing complex **Student** objects, which differ based on student type (e.g., Engineering, MBA). The **Student** class has a mix of mandatory and optional attributes, making the Builder pattern an ideal choice.
 
