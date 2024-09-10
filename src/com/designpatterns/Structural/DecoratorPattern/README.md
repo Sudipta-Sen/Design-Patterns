@@ -69,7 +69,7 @@ Decorator Design pattern is under Design-Patterns repository. You can clone this
 `cd Design-Patterns/src/com/designpatterns`
 
 ### Compile the Code
-To compile the Behavioral/strategy package, use the following command
+To compile the Structural/DecoratorPattern package, use the following command
 
 `make structural_decorator`
 
