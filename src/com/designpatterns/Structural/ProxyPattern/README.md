@@ -25,5 +25,31 @@ The Proxy Design Pattern is a structural design pattern that provides a placehol
 | **Example**          | Virtual proxy for large images (load images lazily).                                                      | Simplified interface to a banking system with multiple subsystems (e.g., loan, account management).           |
 | **Object Interaction**| Acts as a substitute or stand-in for another object.                                                     | Acts as a wrapper for complex subsystems.                                                                    |
 
+## Cloning the Repository
+Proxy Design pattern is under Design-Patterns repository. You can clone this repository using either SSH or HTTPS.
 
-java -cp bin com.designpatterns.Structural.ProxyPattern.client
+### SSH
+`git clone git@github.com:Sudipta-Sen/Design-Patterns.git`
+
+### HTTP
+`git clone https://github.com/Sudipta-Sen/Design-Patterns.git`
+
+## Compile the code
+
+### Navigate to the designpatterns folder
+`cd Design-Patterns/src/com/designpatterns`
+
+### Compile the Code
+To compile the Structural/ProxyPattern package, use the following command
+
+`make structural_proxy`
+
+### Run the Code
+Execute the compiled code with:
+
+`java -cp bin com.designpatterns.Structural.ProxyPattern.client`
+
+### Clean Up: 
+To clean up the compiled classes and bin directory, use:
+
+`make clean`
