@@ -8,6 +8,7 @@ BEHAVIORAL_STRATEGY_SRC = $(wildcard Behavioral/strategy/**/*.java) Behavioral/s
 STRUCTUAL_DECORATOR_SRC = $(wildcard Structural/DecoratorPattern/**/*.java) Structural/DecoratorPattern/main.java
 STRUCTUAL_ADAPTER_SRC = $(wildcard Structural/AdapterPattern/**/*.java) Structural/AdapterPattern/ECommercePlatform.java
 STRUCTUAL_FACADE_SRC = $(wildcard Structural/FacadePattern/**/*.java) Structural/FacadePattern/client.java
+STRUCTUAL_PROXY_SRC = $(wildcard Structural/ProxyPattern/**/*.java) Structural/ProxyPattern/client.java
 CREATIONAL_FACTORY_SRC = $(wildcard Creational/AbstractFactoryPattern/**/*.java) Creational/AbstractFactoryPattern/main.java
 CREATIONAL_BUILDER_SRC = $(wildcard Creational/BuilderPAttern/**/*.java) Creational/BuilderPAttern/main.java
 
@@ -29,7 +30,7 @@ behavioral_strategy: $(BEHAVIORAL_STRATEGY_SRC)
 	echo $(BEHAVIORAL_STRATEGY_SRC)
 	javac -d $(BIN_DIR) $(BEHAVIORAL_STRATEGY_SRC)
 
-structural: structural_decorator structural_adapter structural_facade
+structural: structural_decorator structural_adapter structural_facade structural_proxy
 
 structural_decorator: $(STRUCTUAL_DECORATOR_SRC)
 	@mkdir -p $(BIN_DIR)
@@ -45,6 +46,11 @@ structural_facade: $(STRUCTUAL_FACADE_SRC)
 	@mkdir -p $(BIN_DIR)
 	echo $(STRUCTUAL_FACADE_SRC)
 	javac -d $(BIN_DIR) $(STRUCTUAL_FACADE_SRC)
+
+structural_proxy: $(STRUCTUAL_PROXY_SRC)
+	@mkdir -p $(BIN_DIR)
+	echo $(STRUCTUAL_PROXY_SRC)
+	javac -d $(BIN_DIR) $(STRUCTUAL_PROXY_SRC)
 
 creational: creational_factory creational_builder
 
