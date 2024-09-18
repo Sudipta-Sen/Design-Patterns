@@ -1,0 +1,1 @@
+java -cp bin com.designpatterns.Structural.BridgePattern.client
