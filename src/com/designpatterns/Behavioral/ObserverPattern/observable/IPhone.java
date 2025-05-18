@@ -1,22 +1,18 @@
 package com.designpatterns.Behavioral.ObserverPattern.observable;
 
 public class IPhone extends Product {
-    int noOfStocks;
 
     public IPhone(int noOfStocks) {
         super("IPhone");
         this.noOfStocks = noOfStocks;
     }
 
-    public void setData(int newStocks) {
+    @Override
+    public void addStocks(int newStocks) {
         if(noOfStocks==0) {
-            notifyObservable();
+            notifyObserver();
         }
         noOfStocks = noOfStocks + newStocks;
-    }
-
-    public int getData() {
-        return noOfStocks;
     }
 
 }

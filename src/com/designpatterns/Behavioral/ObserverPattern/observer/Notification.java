@@ -10,6 +10,6 @@ public class Notification implements Observer {
 
     @Override
     public void update(ProductObservableInterface product) {
-        System.out.println("Hi, "+user.getName()+" new notification comes in. "+product.getProductName()+" is now availble");
+        System.out.println("Hi, "+user.getName()+" new notification comes in. "+product.getObservableName()+" is now availble");
     }
 }

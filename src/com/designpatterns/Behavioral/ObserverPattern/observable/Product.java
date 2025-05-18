@@ -4,11 +4,13 @@ import com.designpatterns.Behavioral.ObserverPattern.observer.Observer;
 import java.util.*;
 
 public abstract class Product implements ProductObservableInterface {
-    List<Observer> observerList;
+    // If we use list then If the same User subscribes multiple times, we may end up notifying the same person multiple times.
+    Set<Observer> observerList;
     String name;
+    int noOfStocks;
     public Product(String name) {
         this.name = name;
-        observerList = new ArrayList<>();
+        observerList = new HashSet<>();
     }
 
     @Override
@@ -21,15 +23,20 @@ public abstract class Product implements ProductObservableInterface {
         observerList.remove(obj);
     }
 
-    @Override
-    public String getProductName() {
+    public String getObservableName() {
         return name;
     }
 
     @Override
-    public void notifyObservable() {
+    public void notifyObserver() {
         for(Observer observer: observerList) {
            observer.update(this);
         }
     }
+
+    public int getStocks() {
+        return noOfStocks;
+    }
+
+    public abstract void addStocks(int newStocks);
 }

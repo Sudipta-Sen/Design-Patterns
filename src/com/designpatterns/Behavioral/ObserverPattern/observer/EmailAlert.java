@@ -10,6 +10,6 @@ public class EmailAlert implements Observer {
 
     @Override
     public void update(ProductObservableInterface product) {
-        System.out.println("Send email to "+user.getEmail()+" to notify that "+product.getProductName()+" is now availble");
+        System.out.println("Send email to "+user.getEmail()+" to notify that "+product.getObservableName()+" is now availble");
     }
 }

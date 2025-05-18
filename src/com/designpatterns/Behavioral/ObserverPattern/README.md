@@ -9,8 +9,10 @@ In Amazon, when a product is out of stock, users have the option to click the "N
 
 ### Key Components
 
-**1. Observable:** In our example, the Observable is the Amazon product.
-**2. Observer:** In our example, the Observer is the user who has subscribed to notifications.
+In our example
+
+**1. Observable:** Amazon product.<br>
+**2. Observer:** Users who has subscribed to notifications.
 
 ### Pattern Explanation
 
@@ -27,19 +29,35 @@ In amazon when there is a product which is out of stock and many people wants th
 Then when the product becomes availble all the people that subscribe get notified either by email or by sms or by app notification. This 'Notify Me'
 is implemented via observable pattern.
 
-### Observable Interface
-The Observable interface typically includes the following methods:
+### Implementation Details
 
-1. **add(ObserverInterface observer):** Registers or adds a new Observer.
-2. **remove(ObserverInterface observer):** Removes an existing Observer.
-3. **notify():** Notifies all registered Observers of a state change. This method maintains a list of all Observers.
-4. **setData(Object data):** Any state change in the Observable will be made via this method. This method internally calls notify() to inform Observers of the state change.
-5. **getData():** Retrieves the current state data from the Observable.
+![](../../../../../Pictures/observable-1.png)
 
-### Observer Interface
-Every Observer object must implement an **update()** method, which will be called by the Observable's **notify()** method. This method allows the Observer to take specific actions when notified of a change.
+1. **Subject (Observable) —** `ProductObservableInterface`
+    - Declares methods to add, remove, and notify observers.
+    - All products that want to be observed (like `IPhone`, `WashingMachine`) will implement this interface via the `Product` abstract class.
 
-However, the Observer only knows that something has changed but doesn't know what has changed. To retrieve specific data, the Observer typically holds a reference to the Observable (via constructor injection) and can call the **getData()** method on the Observable.
+2. **Abstract Subject —** `Product`
+    - Implements the `ProductObservableInterface`.
+    - Maintains a list of observers (`observerList`) and a `name` for the product.
+    - Provides methods to manage stock. When stock is added and it was previously 0, it notifies all observers.
+
+3. **Concrete Products —** `IPhone`, `WashingMachine`
+    - Extend the `Product` abstract class.
+    - They implement product-specific stock management logic by calling `addStocks()`.
+
+4. **Observer Interface —** `Observer`
+    - Declares the `update(ProductObservableInterface product)` method that all observers must implement.
+
+5. **Concrete Observers —** `EmailAlert`, `Notification`
+    - Implement the `Observer` interface.
+    - Have access to the `User` that wants to be alerted.
+    - They react when the product becomes available by executing their `update()` method.
+    - Each concrete observer will implement their own `update()` method which will be called by the Observable's **notifyObserver()** method.
+
+6. **User**
+    - Represents a user with `name` and `email`.
+    - Provides a `subscribe()` method to attach an observer (like `EmailAlert` or `Notification`) to a product.
 
 ### Relationship Between Observable and Observer
 1) The relationship between Observable and Observer is a "has-a" relationship.

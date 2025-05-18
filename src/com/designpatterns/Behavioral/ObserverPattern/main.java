@@ -2,6 +2,8 @@ package com.designpatterns.Behavioral.ObserverPattern;
 
 import com.designpatterns.Behavioral.ObserverPattern.observable.IPhone;
 import com.designpatterns.Behavioral.ObserverPattern.observable.WashingMachine;
+import com.designpatterns.Behavioral.ObserverPattern.observer.EmailAlert;
+import com.designpatterns.Behavioral.ObserverPattern.observer.Notification;
 import com.designpatterns.Behavioral.ObserverPattern.observer.User;
 
 public class main{
@@ -16,23 +18,23 @@ public class main{
         User user2 = new User("anant.outlook.com", "Anant Tiwari");
         User user3 = new User("sudisen.visa.com", "Sudipta Sen");
 
-        user1.subscribeToEmail(iPhone);
-        user2.subscribeToEmail(washingMachine);
-        user3.subscribeToNotification(iPhone);
+        user1.subscribe(iPhone, new EmailAlert(user1));
+        user2.subscribe(washingMachine, new EmailAlert(user2));
+        user3.subscribe(iPhone, new Notification(user3));
 
         System.out.println("\nAdd 5 new stocks of iphone");
-        iPhone.setData(5);
+        iPhone.addStocks(5);
         System.out.println("\nAdd 2 new stocks of washing machine");
-        washingMachine.setData(2);
+        washingMachine.addStocks(2);
 
         System.out.println("\nAdd 1 new stocks of iphone");
-        iPhone.setData(1);
+        iPhone.addStocks(1);
 
         System.out.println("\nAll washing machine got sold out");
-        washingMachine.setData(-2);
+        washingMachine.addStocks(-2);
 
         System.out.println("\nAdd 10 new stocks of washing machine");
-        washingMachine.setData(10);
+        washingMachine.addStocks(10);
 
     }
 }

@@ -13,13 +13,8 @@ public class User {
     public String getName() { return name; }
     public String getEmail() { return email; }
 
-    public void subscribeToEmail(ProductObservableInterface obj) {
-        System.out.println("User "+this.name+" is subscribing for email alert for "+ obj.getProductName());
-        obj.addObserver(new EmailAlert(this));
-    }
-
-    public void subscribeToNotification(ProductObservableInterface obj) {
-        System.out.println("User "+this.name+" is subscribing for notification alert for " + obj.getProductName());
-        obj.addObserver(new Notification(this));
+    public void subscribe(ProductObservableInterface obj, Observer observer) {
+        System.out.println("User "+this.name+" is subscribing for alert for "+ obj.getObservableName());
+        obj.addObserver(observer);
     }
 }
