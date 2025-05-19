@@ -30,11 +30,13 @@ Suppose you have a pizza system with:
 - 3 types of pizzas: Margherita, Pepperoni, and BBQChicken
 - 3 types of toppings: Cheese, Olives, and Mushrooms
 
-If you need to create a separate class for every combination of pizza and toppings, you would end up with total 9 combinations. 
+If we need to create a separate class for every combination of pizza and toppings, we would end up with total 9 combinations. 
 
 We will see in code how decorator pattern solves this problem
 
 ## Has-a and Is-a Relationship
+
+![](../../../../../Pictures/decorator-1.png)
 
 ###  Is-a Relationship (Inheritance)
 
