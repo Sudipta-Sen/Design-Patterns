@@ -1,19 +1,26 @@
 #  Adapter Design Pattern
-The Adapter design pattern allows the interface of an existing class to be used as another interface. It acts as a bridge between two incompatible interfaces, making them work together. This pattern involves a single class, known as the adapter, which is responsible for joining functionalities of independent or incompatible interfaces.
+
+The Adapter Design Pattern allows **incompatible interfaces** to work together.
+
+It acts as a **bridge between two incompatible interfaces**, letting classes with incompatible APIs collaborate without changing their source code.
+
+This pattern involves a single class, known as the adapter, which is responsible for joining functionalities of independent or incompatible interfaces.
 
 ## Real World Example
 
-We will take an example of payment systems in an e-commerce platform. The client code (online store) is built to handle a standard payment interface, but different payment gateways (e.g., PayPal, BHIM) have different interfaces. The Adapter helps integrate these diverse gateways into the system.
+We will take an example of payment systems in an e-commerce platform. The client code (`ECommercePlatform`) is built to handle a standard payment interface (`PaymentProcessor`), but different payment gateways (e.g., PayPal, BHIM) have different interfaces(`BHIMPayment`, `PayPalPayment`) . The Adapter helps integrate these diverse gateways into the system.
+
+![](../../../../../Pictures/adapter-1.png)
 
 ### Components
 
-1. **Target Interface:** The interface expected by the client (e.g., PaymentProcessor)
+1. **Target Interface:** The interface expected by the client (e.g., `PaymentProcessor`)
 
-2. **Adaptee:** Existing systems with incompatible interfaces (e.g., PayPalPayment, BHIMPayment).
+2. **Adaptee:** Existing systems with incompatible interfaces (e.g., `PayPalPayment`, `BHIMPayment`).
 
-3. **Adapter:** A class that adapts the Adaptee to the Target Interface. It implements the target interface and internally uses an instance of the adaptee to make it compatible with the target interface. We may also use multiple inheritace here but many language does not support multiple inheritance.
+3. **Adapter:** A class that adapts the Adaptee to the Target Interface. It implements the target interface and **internally uses an instance of the adaptee** to make it compatible with the target interface. We may also use multiple inheritace here but many language does not support multiple inheritance.
 
-4. **Client Code:** The e-commerce platform that interacts with the PaymentProcessor.
+4. **Client Code:** The `ECommercePlatform` that interacts with the PaymentProcessor.
 
 ## Cloning the Repository
 Adapter Design pattern is under Design-Patterns repository. You can clone this repository using either SSH or HTTPS.
