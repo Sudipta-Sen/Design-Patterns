@@ -12,23 +12,25 @@ The **Builder Design Pattern** is a creational design pattern used to construct 
 ## Real world Example with Student Construction
 This project demonstrates the **Builder Design Pattern** for constructing complex **Student** objects, which differ based on student type (e.g., Engineering, MBA). The **Student** class has a mix of mandatory and optional attributes, making the Builder pattern an ideal choice.
 
+![](../../../../../Pictures/builder-1.png)
+
 ### Components of the Implementation:
 
 1. **Product:**
     - **Student:** 
         - Represents the student object that we want to construct with mandatory and optional fields.
-        - This is the final product built by the builders.
+        - This is the final product built by the directors (i.e. `MBAStudentDirector`, `EngineeringStudentDirector`).
 2. **Builder:**
     - **StudentBuilder:** 
-        - Contains methods for setting both mandatory and optional fields. 
+        - Contains abstract methods for setting fields which are mandatory for all student (`name`, `age`)  and optional fields. 
         - Different builders extend this abstract builder to handle specific student types, such as **MBAStudentBuilder** and **EngineeringStudentBuilder**.
 3. **Concrete Builders:**
     - **MBAStudentBuilder:**
-        - Handles the construction of MBA students with mandatory fields like **name**, **age**, **specialization**, and optional fields like **scholarship**, **internship**, and **sportsParticipation**.
-    - **EngineeringStudentBuilder**
-        - Manages the creation of engineering students with mandatory fields like **name**, **age**, **major**, **cgpa**, and optional fields like **scholarship**, **internship**, and **sportsParticipation**.
+        - Handles the setting up fields that are mandatory for MBA students like **name**, **age**, **specialization**, and optional fields like **scholarship**, **internship**, and **sportsParticipation**.
+    - **EngineeringStudentBuilder** 
+        - Handles the setting up fields that are mandatory for engineering students like **name**, **age**, **major**, **cgpa**, and optional fields like **scholarship**, **internship**, and **sportsParticipation**.
 4. **Director:**
-    - The Director classes like **MBAStudentDirector** and **EngineeringStudentDirector** ensure that students are constructed with all mandatory fields before building the Student object.
+    - The Director classes like **MBAStudentDirector** and **EngineeringStudentDirector** ensure that students are constructed with all mandatory fields before building the `Student` object.
     - The Director ensures the integrity of student creation, throwing an exception if mandatory fields are missing.
 
 ## Why Use the Builder Pattern Instead of Constructor and Inheritance?
