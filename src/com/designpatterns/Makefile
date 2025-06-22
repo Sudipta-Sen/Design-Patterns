@@ -5,6 +5,7 @@ BIN_DIR = bin
 # Behavioral sub-packages
 BEHAVIORAL_OBSERVER_SRC = $(wildcard Behavioral/ObserverPattern/**/*.java) Behavioral/ObserverPattern/main.java
 BEHAVIORAL_STRATEGY_SRC = $(wildcard Behavioral/strategy/**/*.java) Behavioral/strategy/main.java
+BEHAVIORAL_CHAINRES_SRC = $(wildcard Behavioral/ChainOfResponsibilityPattern/**/*.java) Behavioral/ChainOfResponsibilityPattern/Main.java
 STRUCTUAL_DECORATOR_SRC = $(wildcard Structural/DecoratorPattern/**/*.java) Structural/DecoratorPattern/main.java
 STRUCTUAL_ADAPTER_SRC = $(wildcard Structural/AdapterPattern/**/*.java) Structural/AdapterPattern/ECommercePlatform.java
 STRUCTUAL_FACADE_SRC = $(wildcard Structural/FacadePattern/**/*.java) Structural/FacadePattern/client.java
@@ -13,11 +14,12 @@ STRUCTUAL_BRIDGE_SRC = $(wildcard Structural/BridgePattern/**/*.java) Structural
 CREATIONAL_FACTORY_SRC = $(wildcard Creational/AbstractFactoryPattern/**/*.java) Creational/AbstractFactoryPattern/main.java
 CREATIONAL_BUILDER_SRC = $(wildcard Creational/BuilderPAttern/**/*.java) Creational/BuilderPAttern/main.java
 
+
 # Default target
 all: behavioral structural creational
 
 # Target for compiling all Behavioral sub-packages
-behavioral: behavioral_observer behavioral_strategy
+behavioral: behavioral_observer behavioral_strategy behavioral_chain_responsibility
 
 # Target for compiling observer sub-package
 behavioral_observer: $(BEHAVIORAL_OBSERVER_SRC)
@@ -30,6 +32,11 @@ behavioral_strategy: $(BEHAVIORAL_STRATEGY_SRC)
 	@mkdir -p $(BIN_DIR)
 	echo $(BEHAVIORAL_STRATEGY_SRC)
 	javac -d $(BIN_DIR) $(BEHAVIORAL_STRATEGY_SRC)
+
+behavioral_chain_responsibility: $(BEHAVIORAL_CHAINRES_SRC)
+	@mkdir -p $(BIN_DIR)
+	echo $(BEHAVIORAL_CHAINRES_SRC)
+	javac -d $(BIN_DIR) $(BEHAVIORAL_CHAINRES_SRC)
 
 structural: structural_decorator structural_adapter structural_facade structural_proxy structural_bridge
 
@@ -75,4 +82,4 @@ clean:
 	rm -rf $(BIN_DIR)
 
 # Phony targets
-.PHONY: all Behavioral behavioral_observer behavioral_strategy clean
+.PHONY: all Behavioral behavioral_observer behavioral_strategy behavioral_chain_responsibility clean
