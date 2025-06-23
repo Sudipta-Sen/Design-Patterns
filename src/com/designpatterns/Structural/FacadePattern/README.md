@@ -1,21 +1,25 @@
 # Facade Design Pattern
-The Facade Design Pattern simplifies interactions with complex systems by providing a unified and easier-to-use interface. Instead of dealing with multiple, often complicated subsystems, a client can interact with just one class (the facade), which internally manages those subsystems.
+The Facade Design Pattern simplifies/hides interactions with complex systems by providing a unified and easier-to-use interface. Instead of dealing with multiple, often complicated subsystems, a client can interact with just one class (the facade), which internally manages those subsystems.
 
 #### Key Points:
 - Facade hides the complexities of the system.
 - It simplifies the interface, making it easier for the client to interact with multiple subsystems.
-- The subsystems can still be accessed directly, but the facade provides a convenient shortcut for common operations.
+- Client will interact with the facade and facade will interace with the complex subsystem, but the subsystems can still be accessed directly, but the facade provides a convenient shortcut for common operations.
+- If client interacts with the subsystem directly then client must be aware of any new changes in the subsystem, otherwise client code might break, while interacting with facade, facade will take care of the changes in subsystem.
 
 ## Real-World Example: Banking System
 
 ### Scenario:
 - The bank has various services such as Account Management, Loan Processing, and Credit Score Checking.
 
-- A customer wants to apply for a loan, and the bank system needs to check the customer's account balance, check the credit score and at last process the loan if every criteria passes
+- A customer wants to apply for a loan, and the bank system needs to check the customer's account balance, check the credit score and at last process the loan if every criteria passes then only the loan will be approved otherwise rejected, but customer need not to be aware of all such procedures and how that happens.
 
 We will use the Facade Pattern to create a BankingFacade class that simplifies interaction with these subsystems.
 
 ### Components of the Code:
+
+![](../../../../../Pictures/facade-1.png)
+
 #### Subsystems
 1. **AccountManagementSubsystem**: Handles customer accounts.
 2. **LoanProcessingSubsystem**: Manages loan applications.
